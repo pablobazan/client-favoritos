@@ -1,0 +1,27 @@
+<div class="favorito-box">
+	<h1>{{titleSection}}</h1>
+
+
+	<form #formFavorito="ngForm" (ngSubmit)="onSubmit()">
+		<label >Titulo:</label>
+		<p>
+			<input type="text" name="title" #title="ngModel" [(ngModel)]="favorito.title" required/>
+			<span *ngIf="title.touched && !title.valid">El titulo es obligatorio</span> <!--Encadenamiento modulo-vista de la variable, es como crear una variable #title y asignarsela al obj favirto -->
+		</p>
+
+		<label >Descripción:</label>
+		<p>
+			<textarea type="text" name="description" #description="ngModel" [(ngModel)]="favorito.description" required >
+			</textarea>
+			<span *ngIf="description.touched && !description.valid">La descripcion no es correcta</span>
+		</p>
+
+		<label >URL:</label>
+		<p>
+			<input type="url" name="url" #url="ngModel" [(ngModel)]="favorito.url" required/>
+			<span *ngIf="url.touched && !url.valid">Introducir URL correcta</span>
+		</p>
+
+		<input type="submit" value="{{titleSection}}">
+	</form>
+</div>

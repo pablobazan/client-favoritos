@@ -1,0 +1,25 @@
+<header id="header">
+	
+	<img src="../../assets/images/nodeLogo.png" id="logo">
+
+	<div class="title-subtitle">
+		
+		<h1><a [routerLink]="['/']">{{title}}</a></h1>
+		
+		<p>{{description}}</p>
+	</div>
+
+	<a class="btn-add-favorito" [routerLink]="['/crear-marcador']">
+		Crear favorito
+	</a>
+
+	<div class="clearfix"></div>
+</header>
+
+<section class="main">
+	<!--MOSTRAMOS OTRO COMPONENTE-->
+	<!--<favoritos-list></favoritos-list> YA NO HACE FALTA, LO REMPLAZA ROUTER-OUTLET CON TODAS LAS RUTAS-->
+	<router-outlet></router-outlet>
+	<div class="clearfix"></div>
+</section>
+
